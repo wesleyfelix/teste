@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/cliente/list', 'ClienteController@listCliente')->name('cliente.list');
+Route::get('/cliente/list', 'ClienteController@list')->name('cliente.list');
+Route::get('/cliente/novo', 'ClienteController@create')->name('cliente.new');
+Route::post('/cliente/criar', 'ClienteController@create')->name('cliente.criar');
+Route::get('/cliente/edit/{id}', 'ClienteController@edit')->name('cliente.edit');
+Route::post('/cliente/salvar', 'ClienteController@save')->name('cliente.salvar');
+Route::get('/cliente/apagar/{id}', 'ClienteController@delete')->name('cliente.delete');
 
 
